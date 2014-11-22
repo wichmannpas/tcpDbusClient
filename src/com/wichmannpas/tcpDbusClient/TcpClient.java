@@ -12,13 +12,13 @@ import java.net.MalformedURLException;
 
 import android.os.AsyncTask;
 
-public class tcpClient extends AsyncTask<Void, Void, Void> {
+public class TcpClient extends AsyncTask<Void, Void, Void> {
 	  
 	String tcpAction = "";
 	String tcpHost = "";
 	int tcpPort;
 	
-	tcpClient(String action, String host, int port) {
+	TcpClient(String action, String host, int port) {
 		tcpAction = action;
 		tcpHost = host;
 		tcpPort = port;
