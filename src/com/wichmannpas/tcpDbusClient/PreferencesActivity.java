@@ -9,6 +9,10 @@ import android.widget.EditText;
 
 public class PreferencesActivity extends ActionBarActivity {
 
+	/*
+	 * save the user preferences
+	 * triggered by onClick-event of save button
+	 */
 	public void savePreferences(View view)
 	{
 		//load SharedPreferences instance
@@ -25,6 +29,9 @@ public class PreferencesActivity extends ActionBarActivity {
     	editor.putInt("port", Integer.valueOf(tcpPort.getText().toString()));
     	editor.putString("target", target.getText().toString());
     	editor.commit();
+    	
+    	//close preferences screen
+    	this.finish();
 	}
 	
 	@Override

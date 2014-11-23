@@ -24,8 +24,13 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE); 
+    }
+    
+    /*
+     * load the tcp server preferences
+     */
+    public void loadPreferences() {
+    	SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE); 
         String initialized = preferences.getString("initialized", null);
         if (initialized == null) {
         	//set default values now
@@ -42,18 +47,27 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void playPause(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "PlayPause", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void next(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Next", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void previous(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Previous", tcpHost, tcpPort);
     	tcpClientInstance.execute();
