@@ -10,14 +10,12 @@ See [tcpDbusServer](http://github.com/wichmannpas/tcpDbusServer) for a C++-writt
 Installation
 ------------
 
-This source code tree contains a precompiled apk file to install the Android app. But, until now, it is not yet possible to change the remote ip and port in the Android app: in the current version these data is hard coded. So you will need to download the source code, change the values in *src/com/wichmannpas/tcpDbusClient/MainActivity.java*. These are the only occurences that you will need to change.
-
-Maybe I will implement the ability to modify these values in the app in the future.
+This source code tree contains a precompiled apk file to install the Android app. You can install that on your phone, if you do not want to build the app by yourself. The app contains a preferences screen where you can manage the ip/domain and port of your tcp server.
 
 What it sends
 -------------
 
-The app can send three strings through the tcp connection: *playPause*, *previous* and *next*. My script [tcpDbusServer](http://github.com/wichmannpas/tcpDbusServer) can handle these three commands.
+This app sends tcp strings to the host. They have the syntax *action:::target:::*, where *action* is the dbus action to send and *target* the dbus target application.
 
 License
 -------
