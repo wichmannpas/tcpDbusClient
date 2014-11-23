@@ -15,10 +15,12 @@ import android.os.AsyncTask;
 public class TcpClient extends AsyncTask<Void, Void, Void> {
 	  
 	String tcpAction = "";
+	String tcpTarget = "";
 	String tcpHost = "";
 	int tcpPort;
 	
-	TcpClient(String action, String host, int port) {
+	TcpClient(String target, String action, String host, int port) {
+		tcpTarget = target;
 		tcpAction = action;
 		tcpHost = host;
 		tcpPort = port;
@@ -33,7 +35,7 @@ public class TcpClient extends AsyncTask<Void, Void, Void> {
 			PrintWriter output = new PrintWriter(out);         
 			
 			//print command through tcp connection
-			output.println(tcpAction);
+			output.println(tcpAction + ":::" + tcpTarget + ":::");
 			output.flush();
 			output.close();
 			

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 
+	private static String target = "spotify";
 	private static String tcpHost = "192.168.2.201";
 	private static int tcpPort = 12341;
 	
@@ -24,19 +25,19 @@ public class MainActivity extends ActionBarActivity {
 
     public void playPause(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient("playPause", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(target, "PlayPause", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void next(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient("next", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(target, "Next", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void previous(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient("previous", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(target, "Previous", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
