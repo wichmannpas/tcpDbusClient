@@ -1,8 +1,6 @@
 TCP DBus Client
 ===============
 
-**Attention!** *You are currently viewing the unstable development branch. Using this source code can cause compatibility issues when used with the stable branch of tcpDbusServer.*
-
 This is an Android tcp client. It can send basic tcp information to a remote computer.
 
 See [tcpDbusServer](http://github.com/wichmannpas/tcpDbusServer) for a C++-written desktop application which can handle the tcp requests and send DBus commands.
