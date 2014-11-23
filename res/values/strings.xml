@@ -11,5 +11,6 @@
     <string name="tcpPortLabel">TCP Port</string>
     <string name="targetLabel">DBus Target</string>
     <string name="buttonSavePreferences">Save Preferences</string>
+    <string name="optionDefault">Default</string>
 
 </resources>

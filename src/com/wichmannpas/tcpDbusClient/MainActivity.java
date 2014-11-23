@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Spinner;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -50,6 +51,14 @@ public class MainActivity extends ActionBarActivity {
     	//load tcp preferences
     	loadPreferences();
     	
+    	//check spinner for other value than default
+    	Spinner spinnerTarget = (Spinner)findViewById(R.id.spinnerTarget);
+    	String targetChosen = spinnerTarget.getSelectedItem().toString();
+    	
+    	if (targetChosen != getString(R.string.optionDefault)) {//special target selected?
+    		tcpTarget = targetChosen;//using selected target instead of configured one
+    	}
+    	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "PlayPause", tcpHost, tcpPort);
     	tcpClientInstance.execute();
@@ -59,6 +68,14 @@ public class MainActivity extends ActionBarActivity {
     	//load tcp preferences
     	loadPreferences();
     	
+    	//check spinner for other value than default
+    	Spinner spinnerTarget = (Spinner)findViewById(R.id.spinnerTarget);
+    	String targetChosen = spinnerTarget.getSelectedItem().toString();
+    	
+    	if (targetChosen != getString(R.string.optionDefault)) {//special target selected?
+    		tcpTarget = targetChosen;//using selected target instead of configured one
+    	}
+    	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Next", tcpHost, tcpPort);
     	tcpClientInstance.execute();
@@ -67,6 +84,14 @@ public class MainActivity extends ActionBarActivity {
     public void previous(View view) {
     	//load tcp preferences
     	loadPreferences();
+    	
+    	//check spinner for other value than default
+    	Spinner spinnerTarget = (Spinner)findViewById(R.id.spinnerTarget);
+    	String targetChosen = spinnerTarget.getSelectedItem().toString();
+    	
+    	if (targetChosen != getString(R.string.optionDefault)) {//special target selected?
+    		tcpTarget = targetChosen;//using selected target instead of configured one
+    	}
     	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Previous", tcpHost, tcpPort);

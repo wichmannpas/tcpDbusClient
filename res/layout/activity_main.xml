@@ -38,4 +38,22 @@
         android:onClick="next"
         android:text="@string/next" />
 
+    <Spinner
+        android:id="@+id/spinnerTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:entries="@array/targets_spinner" />
+
+    <TextView
+        android:id="@+id/spinnerTargetLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnerTarget"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/targetLabel" />
+
 </RelativeLayout>
