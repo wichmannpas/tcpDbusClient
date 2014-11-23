@@ -46,7 +46,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tcpPortLabel"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:maxLength="5" />
 
     <TextView
         android:id="@+id/targetLabel"
@@ -66,5 +67,15 @@
         android:layout_below="@+id/targetLabel"
         android:ems="10"
         android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonSavePreferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="savePreferences"
+        android:text="@string/buttonSavePreferences" />
 
 </RelativeLayout>

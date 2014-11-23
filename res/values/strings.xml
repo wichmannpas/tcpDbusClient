@@ -10,5 +10,6 @@
     <string name="tcpHostLabel">TCP Host</string>
     <string name="tcpPortLabel">TCP Port</string>
     <string name="targetLabel">DBus Target</string>
+    <string name="buttonSavePreferences">Save Preferences</string>
 
 </resources>
