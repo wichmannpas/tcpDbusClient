@@ -9,35 +9,51 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public class MainActivity extends ActionBarActivity {
 
-	private static String target = "spotify";
-	private static String tcpHost = "192.168.2.201";
-	private static int tcpPort = 12341;
+	private String tcpTarget;
+	private String tcpHost;
+	private int tcpPort;
 	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        SharedPreferences preferences = getSharedPreferences("target", MODE_PRIVATE); 
+        String initialized = preferences.getString("initialized", null);
+        if (initialized == null) {
+        	//set default values now
+        	Editor editor = preferences.edit();
+        	editor.putString("target", "spotify");
+        	editor.putString("host", "192.168.2.201");
+        	editor.putInt("port", 12341);
+        	editor.commit();
+        }
+        tcpTarget = preferences.getString("target", "spotify");
+    	tcpHost = preferences.getString("host", "192.168.2.201");
+    	tcpPort = preferences.getInt("port", 12341);
     }
 
     public void playPause(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient(target, "PlayPause", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "PlayPause", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void next(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient(target, "Next", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Next", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
     public void previous(View view) {
     	//start asynchronous network task
-    	TcpClient tcpClientInstance = new TcpClient(target, "Previous", tcpHost, tcpPort);
+    	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Previous", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
