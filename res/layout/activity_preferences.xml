@@ -8,4 +8,63 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wichmannpas.tcpDbusClient.PreferencesActivity" >
 
+    <TextView
+        android:id="@+id/tcpHostLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tcpHostLabel" />
+
+    <EditText
+        android:id="@+id/tcpHost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tcpHostLabel"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tcpPortLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tcpHost"
+        android:text="@string/tcpPortLabel" />
+
+    <EditText
+        android:id="@+id/tcpPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tcpPortLabel"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/targetLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tcpPort"
+        android:text="@string/targetLabel" />
+
+    <EditText
+        android:id="@+id/target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/targetLabel"
+        android:ems="10"
+        android:inputType="text" />
+
 </RelativeLayout>

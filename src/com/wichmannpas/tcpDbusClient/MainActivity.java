@@ -25,11 +25,12 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        SharedPreferences preferences = getSharedPreferences("target", MODE_PRIVATE); 
+        SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE); 
         String initialized = preferences.getString("initialized", null);
         if (initialized == null) {
         	//set default values now
         	Editor editor = preferences.edit();
+        	editor.putString("initialized", "true");
         	editor.putString("target", "spotify");
         	editor.putString("host", "192.168.2.201");
         	editor.putInt("port", 12341);
