@@ -4,6 +4,7 @@
 
 package com.wichmannpas.tcpDbusClient;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -12,6 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Spinner;
 
 public class MainActivity extends ActionBarActivity {
@@ -115,6 +117,22 @@ public class MainActivity extends ActionBarActivity {
         	Intent intent = new Intent(this, PreferencesActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.action_about) {
+        	//display about message
+     
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setIcon(R.drawable.ic_launcher);
+            builder.setTitle(R.string.about);
+            
+            ViewGroup parent = (ViewGroup) ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
+            View messageView = getLayoutInflater().inflate(R.layout.about, parent, false);
+            builder.setView(messageView);
+            
+            builder.create();
+            builder.show();
+        	
+        	return true;
         }
         return super.onOptionsItemSelected(item);
     }

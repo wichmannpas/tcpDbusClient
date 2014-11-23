@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">TCP DBus Client</string>
+    <string name="app_description">This is an Android tcp client. It can send basic tcp information to a remote computer.</string>
+    <string name="app_credits">Copyright 2014 Pascal Wichmann\n\nLicensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="playPause">Play/Pause</string>
@@ -12,5 +14,6 @@
     <string name="targetLabel">DBus Target</string>
     <string name="buttonSavePreferences">Save Preferences</string>
     <string name="optionDefault">Default</string>
+    <string name="about">About</string>
 
 </resources>
