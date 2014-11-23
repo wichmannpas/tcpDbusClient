@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="targets_spinner">
+        <item>Default</item>
+        <item>Spotify</item>
+        <item>Rhythmbox</item>
+        <item>VLC Media Player</item>
+    </string-array>
+</resources>
