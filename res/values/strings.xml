@@ -7,6 +7,7 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="playPause">Play/Pause</string>
+    <string name="stop">Stop</string>
     <string name="preferences">Preferences</string>
     <string name="title_activity_preferences">Preferences</string>
     <string name="tcpHostLabel">TCP Host</string>
