@@ -49,6 +49,9 @@ public class MainActivity extends ActionBarActivity {
     	tcpPort = preferences.getInt("port", 12341);
     }
 
+    /*
+     * send playPause tcp message
+     */
     public void playPause(View view) {
     	//load tcp preferences
     	loadPreferences();
@@ -66,6 +69,9 @@ public class MainActivity extends ActionBarActivity {
     	tcpClientInstance.execute();
     }
     
+    /*
+     * send next tcp signal
+     */
     public void next(View view) {
     	//load tcp preferences
     	loadPreferences();
@@ -83,6 +89,9 @@ public class MainActivity extends ActionBarActivity {
     	tcpClientInstance.execute();
     }
     
+    /*
+     * send previous tcp signal
+     */
     public void previous(View view) {
     	//load tcp preferences
     	loadPreferences();
@@ -97,6 +106,26 @@ public class MainActivity extends ActionBarActivity {
     	
     	//start asynchronous network task
     	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Previous", tcpHost, tcpPort);
+    	tcpClientInstance.execute();
+    }
+    
+    /*
+     * send stop tcp signal
+     */
+    public void stop(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
+    	//check spinner for other value than default
+    	Spinner spinnerTarget = (Spinner)findViewById(R.id.spinnerTarget);
+    	String targetChosen = spinnerTarget.getSelectedItem().toString();
+    	
+    	if (targetChosen != getString(R.string.optionDefault)) {//special target selected?
+    		tcpTarget = targetChosen;//using selected target instead of configured one
+    	}
+    	
+    	//start asynchronous network task
+    	TcpClient tcpClientInstance = new TcpClient(tcpTarget, "Stop", tcpHost, tcpPort);
     	tcpClientInstance.execute();
     }
     
