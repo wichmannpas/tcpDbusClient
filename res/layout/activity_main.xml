@@ -56,6 +56,29 @@
         android:layout_alignParentRight="true"
         android:text="@string/targetLabel" />
 
+    <LinearLayout
+        android:id="@+id/volumeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/volumeDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minus"
+            android:onClick="volumeDown" />
+
+        <Button
+            android:id="@+id/volumeUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus"
+            android:onClick="volumeUp" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/buttonStop"
         android:layout_width="wrap_content"
@@ -63,9 +86,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/buttonNext"
-        android:layout_marginTop="23dp"
         android:background="@drawable/buttonred"
         android:onClick="stop"
         android:text="@string/stop" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonStop"
+        android:layout_below="@+id/buttonStop"
+        android:text="@string/volume" />
 
 </RelativeLayout>

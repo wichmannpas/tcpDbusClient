@@ -3,17 +3,23 @@ TCP DBus Client
 
 This is an Android tcp client. It can send basic tcp information to a remote computer.
 
+Features currently supported:
+
+* play/pause
+* previous/next
+* volume control
+
 See [tcpDbusServer](http://github.com/wichmannpas/tcpDbusServer) for a C++-written desktop application which can handle the tcp requests and send DBus commands.
 
 Installation
 ------------
 
-This source code tree contains a precompiled apk file to install the Android app. You can install that on your phone, if you do not want to build the app by yourself. The app contains a preferences screen where you can manage the ip/domain and port of your tcp server.
+The master source code tree contains a precompiled apk file to install the Android app. You can install that on your phone, if you do not want to build the app by yourself. The app contains a preferences screen where you can manage the ip/domain and port of your tcp server.
 
 What it sends
 -------------
 
-This app sends tcp strings to the host. They have the syntax *action:::target:::*, where *action* is the dbus action to send and *target* the dbus target application.
+This app sends tcp strings to the host. They have the syntax *action:::target:::*, where *action* is the dbus action to send and *target* the dbus target application, or the action for *amixer*.
 
 License
 -------

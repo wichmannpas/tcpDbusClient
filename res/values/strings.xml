@@ -16,5 +16,8 @@
     <string name="buttonSavePreferences">Save Preferences</string>
     <string name="optionDefault">Default</string>
     <string name="about">About</string>
+    <string name="volume">Volume</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
 
 </resources>
