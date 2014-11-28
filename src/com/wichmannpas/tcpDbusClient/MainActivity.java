@@ -129,6 +129,30 @@ public class MainActivity extends ActionBarActivity {
     	tcpClientInstance.execute();
     }
     
+    /*
+     * send volume down tcp signal
+     */
+    public void volumeDown(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
+    	//start asynchronous network task
+    	TcpClient tcpClientInstance = new TcpClient("down", "volume", tcpHost, tcpPort);
+    	tcpClientInstance.execute();
+    }
+    
+    /*
+     * send volume up tcp signal
+     */
+    public void volumeUp(View view) {
+    	//load tcp preferences
+    	loadPreferences();
+    	
+    	//start asynchronous network task
+    	TcpClient tcpClientInstance = new TcpClient("up", "volume", tcpHost, tcpPort);
+    	tcpClientInstance.execute();
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
